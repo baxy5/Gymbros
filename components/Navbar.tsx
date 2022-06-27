@@ -7,13 +7,13 @@ import MenuIcon from "../components/Navbar/MenuIcon";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen)
 
   return (
     <div className="w-52">
       <div className="flex p-2 justify-between items-center bg-color-seven">
         <Logo />
-        <MenuIcon toggle={toggle} isOpen={isOpen} />
+        <MenuIcon isOpen={isOpen} toggle={toggle} />
       </div>
       <Menu isOpen={isOpen} />
     </div>
