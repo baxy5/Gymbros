@@ -10,10 +10,12 @@ const Navbar = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Logo />
-      <Menu />
-      <MenuIcon toggle={toggle} isOpen={isOpen} />
+    <div className="w-52">
+      <div className="flex p-2 justify-between items-center bg-color-seven">
+        <Logo />
+        <MenuIcon toggle={toggle} isOpen={isOpen} />
+      </div>
+      <Menu isOpen={isOpen} />
     </div>
   );
 };

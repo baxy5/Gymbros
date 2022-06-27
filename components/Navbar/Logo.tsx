@@ -6,8 +6,8 @@ const Logo = () => {
     <div>
       <Link href="/">
         <a>
-          <p className="font-bold text-xl md:text-3xl lg:text-4xl">
-            Gym<span className="text-color-seven">Bros</span>
+          <p className="font-bold text-xl md:text-2xl lg:text-3xl">
+            Gym<span className="text-color-two">Bros</span>
           </p>
         </a>
       </Link>
