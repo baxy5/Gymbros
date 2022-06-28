@@ -1,25 +1,40 @@
 import React from 'react'
 
-// Workout Duration: minute --> (Activity chart)
-// Workout Type: cardio, body build etc..
-// Calorie Consumption --> (Calorie chart)
-// Weight: kg --> (Weight chart)
+import input from "../types/input"
 
+const createActivity = async (e: any) => {
+  const activityData: input = {
+    duration: e.target.duration.value,
+    type: e.target.type.value,
+    calorie: e.target.calorie.value,
+    weight: e.target.weight.value
+  }
+
+  const response = await fetch("/api/create-workout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(activityData)
+  })
+
+  console.log(response)
+}
 
 const WorkoutInput = () => {
   return (
     <div className='h-screen flex flex-col justify-center items-center w-full'>
       <h1 className='font-bold text-4xl p-2 mb-5'>Today's workout</h1>
-      <form className='flex flex-col w-72'>
+      <form className='flex flex-col w-72' onSubmit={createActivity}>
         <label className='my-2 font-bold text-lg'>Duration</label>
-        <input type="text" placeholder='Minute' className='p-1 border-solid border-2 border-color-six' />
+        <input name="duration" required type="text" placeholder='Minute' className='p-1 border-solid border-2 border-color-six' />
         <label className='my-2 font-bold text-lg'>Type</label>
-        <input type="text" placeholder='Cardio, Yoga, Aerobic, Body building...' className='p-1 border-solid border-2 border-color-six' />
+        <input name="type" required type="text" placeholder='Cardio, Yoga, Aerobic, Body building...' className='p-1 border-solid border-2 border-color-six' />
         <label className='my-2 font-bold text-lg'>Calorie</label>
-        <input type="text" placeholder='Give me your calorie consumption' className='p-1 border-solid border-2 border-color-six' />
+        <input name="calorie" required type="text" placeholder='Give me your calorie consumption' className='p-1 border-solid border-2 border-color-six' />
         <label className='my-2 font-bold text-lg'>Weight</label>
-        <input type="text" placeholder='Kg' className='p-1 border-solid border-2 border-color-six' />
-        <button type='submit' className='p-1 my-7 border-solid border-2 border-color-six'>Submit</button>
+        <input name="weight" required type="text" placeholder='Kg' className='p-1 border-solid border-2 border-color-six' />
+        <button type='submit' className='p-1 my-7 border-solid border-2 border-color-six transition-all duration-150 ease-in-out hover:bg-color-six'>Submit</button>
       </form>
     </div>
   )
