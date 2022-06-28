@@ -5,6 +5,8 @@ async function connect() {
     if (err) throw err;
 
     console.log("Database connection successful.");
+
+    return client;
   });
 }
 
