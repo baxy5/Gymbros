@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Logo from "../components/Navbar/Logo";
 import Menu from "../components/Navbar/Menu";
-import MenuIcon from "../components/Navbar/MenuIcon";
+/* import MenuIcon from "../components/Navbar/MenuIcon"; */
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
         <Logo />
         {/* <MenuIcon toggle={toggle} /> */}
       </div>
-      <Menu isOpen={isOpen} />
+      <Menu isOpen={isOpen} index="/" charts="/charts" />
     </div>
   );
 };
