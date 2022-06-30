@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className="w-52">
       <div className="flex p-2 justify-between items-center bg-color-seven">
         <Logo />
-        <MenuIcon toggle={toggle} />
+        {/* <MenuIcon toggle={toggle} /> */}
       </div>
       <Menu isOpen={isOpen} />
     </div>
