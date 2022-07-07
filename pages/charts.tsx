@@ -2,7 +2,7 @@ import React from 'react'
 
 import Navbar from "../components/Navbar"
 
-import { LineChart, Line } from 'recharts';
+import { LineChart, Line, Tooltip, XAxis, YAxis } from 'recharts';
 
 const data = [
     {
@@ -51,11 +51,13 @@ const data = [
 
 const charts = () => {
     return (
-        <div className='flex'>
+        <div className='flex w-full'>
             <Navbar />
-            <h1>charts</h1>
             <LineChart width={500} height={300} data={data}>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+                <Line type="monotone" dataKey="pv" stroke="#207567" strokeWidth={2} />
+                <Tooltip />
+                <XAxis dataKey="name" />
+                <YAxis />
             </LineChart>
         </div>
     )

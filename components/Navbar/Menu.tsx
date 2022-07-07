@@ -5,16 +5,16 @@ const Menu = ({ isOpen, index, charts }: { isOpen: boolean, index: string, chart
   return (
     <div className="bg-color-seven h-screen transition-all ease-in-out delay-150">
       <ul className="flex flex-col text-center">
-        <li className="font-bold uppercase py-3 hover:bg-color-two cursor-pointer">
-          <Link href={index}>
+        <Link href={index}>
+          <li className="font-bold uppercase py-3 hover:bg-color-two cursor-pointer">
             <a>Add Workout</a>
-          </Link>
-        </li>
-        <li className="font-bold uppercase py-3 hover:bg-color-two cursor-pointer">
-          <Link href={charts}>
+          </li>
+        </Link>
+        <Link href={charts}>
+          <li className="font-bold uppercase py-3 hover:bg-color-two cursor-pointer">
             <a>Progress</a>
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </div>
   );
