@@ -57,7 +57,6 @@ const charts = () => {
                 <ResponsiveContainer width={700} height="80%">
                     <LineChart width={500} height={300} data={data}>
                         <Line type="monotone" dataKey="pv" stroke="#207567" strokeWidth={2} />
-                        <Tooltip />
                         <XAxis dataKey="name" />
                         <YAxis />
                     </LineChart>
