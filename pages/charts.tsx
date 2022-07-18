@@ -5,18 +5,14 @@ import Navbar from "../components/Navbar"
 import { LineChart, Line, Tooltip, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 
 const charts = () => {
-    const [broProgress, setBroProgress] = useState({
-        data: []
-    })
+    const [broProgress, setBroProgress] = useState([])
 
     const readProgress = () => {
         fetch("/api/read-workout")
             .then((res) => res.json())
             .then((res) => {
                 console.log(res[0].data)
-                setBroProgress({
-                    data: res[0].data
-                })
+                setBroProgress(res.data)
             })
     }
 
@@ -30,15 +26,15 @@ const charts = () => {
         <div className='flex w-full'>
             <Navbar />
             <div className='flex justify-around items-center w-full'>
-                <LineChart width={730} height={250} data={data}
+                <LineChart width={730} height={250} data={broProgress}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="duration" />
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                    <Line type="monotone" dataKey="duration" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="calorie" stroke="#82ca9d" />
                 </LineChart>
             </div>
         </div>
