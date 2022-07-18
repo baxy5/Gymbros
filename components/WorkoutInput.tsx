@@ -24,7 +24,7 @@ const createActivity = async (e: any) => {
 const WorkoutInput = () => {
   return (
     <div className='h-screen flex flex-col justify-center items-center w-full'>
-      <h1 className='font-bold text-4xl p-2 mb-5'>Today's workout</h1>
+      <h1 className='font-bold text-4xl p-2 mb-5'>Today's progress</h1>
       <form className='flex flex-col w-72 p-10 border-2 border-color-seven rounded' onSubmit={createActivity}>
         <label className='my-2 font-bold text-lg'>Duration</label>
         <input name="duration" required type="text" placeholder='Workout session (minute)' className='p-1 rounded border-solid border-2 border-color-six' />
