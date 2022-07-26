@@ -5,7 +5,7 @@ import WorkoutInput from "../components/WorkoutInput";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex">
+    <div className="flex bg-color-six ">
       <Navbar />
       <WorkoutInput />
     </div>

@@ -11,8 +11,11 @@ const charts = () => {
         fetch("/api/read-workout")
             .then((res) => res.json())
             .then((res) => {
-                console.log(res[0].data)
-                setBroProgress(res.data)
+                for (let i = 0; i < res.length; i++) {
+                    setBroProgress(res[i].data)
+                    console.log(res[i].data)
+                    console.log(broProgress)
+                }
             })
     }
 
